@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxxhdpi"
+    format="8"
+    plugin-version="2.2.2"
+    timestamp="21623628048294"
+    token="-7725212572862657754"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="3682" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="2063" />
+    <task
+        name="verifier"
+        duration="52" />
+
+    <artifact
+        location="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="21623628048294"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

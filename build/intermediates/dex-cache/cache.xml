@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6c0cba48bb978c6cbc3085a4af95b515bc08f04c">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6f8bd2f4fff30e66a6f06287ca9ed9e79998eed8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5461713d85c5aab0b6152bc9c9062500be706393/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_84fd8094500517ca40e054a8db6600d05ba930d4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_fcbb7fc48a9df565b6480c3761a3225a53447a10/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.0.1_ad138d4ff8ef20c932f60ffd83dc6a5cfab82bcd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_c2610f684e0470ae1a75d81a030aae2b1bf30067/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_cf8ebd077e81344a0c12fe4dead63a33887dd8d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_beff885d454afe3850087efd48771287206229e4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_70b618f5dd7e368a54e7327faebed691d2a86fac/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_8d3b8037d6d1092552012e5dec7ada3d644c17ef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_859c16b5d156d1e034f2627da5beb9cbedf276db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_2a56e6d208b8389ce078a5ea3571521b822da8b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_6228f3e065100fbcdf67e158a194fc9f9d0734f2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_e1cb4ebf3dc08ba5278fe7edf461c5d16f0ab32a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_9cc3ad3497cd70521f0ee77bc90302bfeab6d7eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_71c0736bdf15e69c2551d1234ce93d5087ab4f2e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.0.1_9c4c7bd896ad95cf0d3d91681b27b061ce1aafb1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_0f94fb3b68fccba0eb60ea19f05fa121b0fe56b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_eda962d176fa79db0f60f01a75938987094888aa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_d553173b4ca0df8618b9945a917b04da22c044b0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_aaca50046f565091ac1c12d76bfe3d4d71c75cfc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_bd7ab95b3df26131bb18898586257addb425f145/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a16ff170df74d77e4f202d52f17a7cd6112e1176">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e75e89ec04028a961eab968a1678eb70bd2e3d98/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_716f33af2a45b4d155a3964e4d66602360f19284/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.0.1_3fc704178860a9d284c49845b5bc758086ecb681/classes.dex" />
+    </item>
+
+</items>

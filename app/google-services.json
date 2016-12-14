@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "844665268262",
+    "firebase_url": "https://holoyugioh.firebaseio.com",
+    "project_id": "holoyugioh",
+    "storage_bucket": "holoyugioh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844665268262:android:1e95eac1a10d9142",
+        "android_client_info": {
+          "package_name": "android.com.holoyugioh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844665268262-9rhc6a6jkq60qtedfsrlr2faa37jova7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbwcP9SjbKHd9ACyx4LfyVxN07D-Ttyck"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844665268262-9rhc6a6jkq60qtedfsrlr2faa37jova7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
