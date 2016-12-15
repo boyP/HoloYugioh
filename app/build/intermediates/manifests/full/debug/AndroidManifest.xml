@@ -9,13 +9,12 @@
         android:targetSdkVersion="24" />
 
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="true" />
 
-    <!-- Required permission for App measurement to run. -->
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
@@ -37,16 +36,9 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!-- android:screenOrientation="landscape"> -->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.nfc.action.NDEF_DISCOVERED"/> -->
@@ -54,6 +46,15 @@
             <!-- <data android:mimeType="text/plain" /> -->
             <!-- </intent-filter> -->
 
+        </activity>
+        <activity
+            android:name="android.com.holoyugioh.SplashActivity"
+            android:theme="@style/SplashTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <receiver
@@ -74,16 +75,6 @@
             android:name="com.google.android.gms.measurement.AppMeasurementService"
             android:enabled="true"
             android:exported="false" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
-        <provider
-            android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="android.com.holoyugioh.firebaseinitprovider"
-            android:exported="false"
-            android:initOrder="100" />
 
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
@@ -114,6 +105,16 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="android.com.holoyugioh.firebaseinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

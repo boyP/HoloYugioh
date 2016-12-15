@@ -1,7 +1,0 @@
-#Tue Dec 13 22:40:35 EST 2016
-base.0=/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6f8bd2f4fff30e66a6f06287ca9ed9e79998eed8
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e75e89ec04028a961eab968a1678eb70bd2e3d98/classes.dex
-base.1=/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e75e89ec04028a961eab968a1678eb70bd2e3d98
-file.0=/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6f8bd2f4fff30e66a6f06287ca9ed9e79998eed8/classes.dex

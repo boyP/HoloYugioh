@@ -40,16 +40,16 @@
         "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_seekbar_tick_mark_material.xml"
     },
     {
-        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
-        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_list_selector_holo_dark.xml"
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_switch_thumb_material.xml"
     },
     {
         "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
         "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_check_material.xml"
     },
     {
-        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
-        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_switch_thumb_material.xml"
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_list_selector_holo_dark.xml"
     },
     {
         "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
@@ -58,6 +58,10 @@
     {
         "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
         "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/drawable/splash.xml",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/drawable/splash.xml"
     },
     {
         "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",

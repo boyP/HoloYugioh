@@ -1,14 +1,19 @@
 package android.com.holoyugioh;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
+import android.nfc.tech.MifareClassic;
+import android.nfc.tech.NfcA;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -17,9 +22,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import api.CardDatabase;
+import game.Card;
+
 public class MainActivity extends AppCompatActivity {
 
     final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
+
+    private DatabaseReference mDatabase;
+
+    // For NFC Dispatching
+    private PendingIntent pendingIntent;
+    private IntentFilter[] intentFilterArray;
+    private String[][] techListArray;
+    private NfcAdapter mNfcAdapter;
 
     public static String bytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
@@ -48,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Check to see if NFC is available on this device
-        NfcAdapter mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mNfcAdapter != null) {
             Toast.makeText(this, "NFC available on this device", Toast.LENGTH_SHORT).show();
         }
@@ -56,6 +75,30 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "NFC is not available on this device", Toast.LENGTH_SHORT).show();
         }
 
+        // Pending Intent
+        pendingIntent = PendingIntent.getActivity(this, 0,
+                new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+
+        IntentFilter tagDiscovery = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
+
+        // Intercept only NDEF Intents
+//        IntentFilter ndef = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
+//        try {
+//            ndef.addDataType("*/*");
+//        }
+//        catch (IntentFilter.MalformedMimeTypeException e) {
+//            throw new RuntimeException("Failed", e);
+//        }
+
+        intentFilterArray = new IntentFilter[] {tagDiscovery};
+        techListArray = new String[][] { new String[] {MifareClassic.class.getName()}};
+
+        // Set up database for handling game state
+        mDatabase = FirebaseDatabase.getInstance().getReference("cards");
+        String name = "Polymerization";
+        String desc = "Cool card 4 fusion";
+        Card card = new Card(name, desc);
+        mDatabase.setValue(card);
     }
 
     @Override
@@ -80,7 +123,23 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // NFC stuff
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mNfcAdapter.disableForegroundDispatch(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mNfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilterArray, techListArray);
+    }
+
+    /**
+     * Receives new intent
+     *
+     * @param intent
+     */
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
@@ -105,8 +164,23 @@ public class MainActivity extends AppCompatActivity {
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             String str = bytesToHex(tag.getId());
             Log.d("TAG", str);
-            Toast toast = Toast.makeText(context, str, Toast.LENGTH_SHORT);
-            toast.show();
+
+            showCardPlacementDialog(str);
         }
+    }
+
+    /**
+     * Card placement Dialog
+     */
+    private void showCardPlacementDialog(String cardName) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Where do you want to place " + cardName);
+
+        // Put options here
+
+        // Add onclick events to all options
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
