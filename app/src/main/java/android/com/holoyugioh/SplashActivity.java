@@ -1,13 +1,8 @@
 package android.com.holoyugioh;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.MotionEvent;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -19,7 +14,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, PlayerOptionActivity.class);
         startActivity(intent);
         finish();
     }

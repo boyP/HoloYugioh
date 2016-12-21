@@ -35,10 +35,8 @@
             android:name="android.com.holoyugioh.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
-
-            <!-- android:screenOrientation="landscape"> -->
-
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.nfc.action.NDEF_DISCOVERED"/> -->
@@ -56,6 +54,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="android.com.holoyugioh.PlayerOptionActivity" />
+        <activity android:name="android.com.holoyugioh.OppFieldActivity" />
+        <activity android:name="android.com.holoyugioh.PlayerFieldActivity" />
+        <activity
+            android:name="android.com.holoyugioh.MenuActivity"
+            android:label="@string/title_activity_menu" />
+        <activity android:name="android.com.holoyugioh.NfcActivity" />
+        <activity android:name="android.com.holoyugioh.PlaceCardActivity" />
+        <activity android:name="android.com.holoyugioh.CardDetailsActivity" />
+        <activity android:name="android.com.holoyugioh.CardOptionsActivity" />
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

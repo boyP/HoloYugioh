@@ -1,6 +1,26 @@
 [
     {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/layout-land/activity_player_field.xml",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/layout-land/activity_player_field.xml"
+    },
+    {
         "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/layout-land/activity_main.xml",
         "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/layout-land/activity_main.xml"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/layout-land/field.xml",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/layout-land/field.xml"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/layout-land/activity_place_card.xml",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/layout-land/activity_place_card.xml"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/layout-land/activity_opp_field.xml",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/layout-land/activity_opp_field.xml"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/layout-land/activity_player_option.xml",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/layout-land/activity_player_option.xml"
     }
 ]

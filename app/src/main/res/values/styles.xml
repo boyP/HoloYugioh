@@ -33,4 +33,23 @@
         <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
+    <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#000000</item>
+        <!-- Used for the background -->
+        <item name="android:background">#FFFFFF</item>
+    </style>
+    
+    <style name="ZoneButton" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:src">@mipmap/ic_launcher</item>
+    </style>
+    <style name="cardButon" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:text">Hello World</item>
+    </style>
+
 </resources>

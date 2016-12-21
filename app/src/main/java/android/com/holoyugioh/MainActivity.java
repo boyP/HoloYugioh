@@ -2,33 +2,31 @@ package android.com.holoyugioh;
 
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.MifareClassic;
-import android.nfc.tech.NfcA;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import api.CardDatabase;
 import game.Card;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
 
@@ -56,15 +54,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         // Check to see if NFC is available on this device
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
@@ -97,8 +86,35 @@ public class MainActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference("cards");
         String name = "Polymerization";
         String desc = "Cool card 4 fusion";
-        Card card = new Card(name, desc);
+        Card card = new Card(name, desc, "Spell");
         mDatabase.setValue(card);
+
+
+        /**************
+         *  BUTTONS
+         **************/
+        ImageButton mon1 = (ImageButton) findViewById(R.id.monster_1);
+        ImageButton mon2 = (ImageButton) findViewById(R.id.monster_2);
+        ImageButton mon3 = (ImageButton) findViewById(R.id.monster_3);
+        ImageButton mon4 = (ImageButton) findViewById(R.id.monster_4);
+        ImageButton mon5 = (ImageButton) findViewById(R.id.monster_5);
+        mon1.setOnClickListener(this);
+        mon2.setOnClickListener(this);
+        mon3.setOnClickListener(this);
+        mon4.setOnClickListener(this);
+        mon5.setOnClickListener(this);
+
+        ImageButton magic1 = (ImageButton) findViewById(R.id.magic_1);
+        ImageButton magic2 = (ImageButton) findViewById(R.id.magic_2);
+        ImageButton magic3 = (ImageButton) findViewById(R.id.magic_3);
+        ImageButton magic4 = (ImageButton) findViewById(R.id.magic_4);
+        ImageButton magic5 = (ImageButton) findViewById(R.id.magic_5);
+        magic1.setOnClickListener(this);
+        magic2.setOnClickListener(this);
+        magic3.setOnClickListener(this);
+        magic4.setOnClickListener(this);
+        magic5.setOnClickListener(this);
+
     }
 
     @Override
@@ -173,14 +189,38 @@ public class MainActivity extends AppCompatActivity {
      * Card placement Dialog
      */
     private void showCardPlacementDialog(String cardName) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+        final String[] options = new String[] { "Face-Down", "Face-Up"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.DialogStyle);
         builder.setTitle("Where do you want to place " + cardName);
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                Log.d("DIALOG", "You chose " + options[which]);
 
-        // Put options here
-
-        // Add onclick events to all options
+                // Send the chosen option somewhere
+            }
+        });
 
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.monster_1:
+                break;
+            case R.id.monster_2:
+                break;
+            case R.id.monster_3:
+                break;
+            case R.id.monster_4:
+                break;
+            case R.id.monster_5:
+                break;
+
+            // Add the magic zones
+        }
     }
 }
