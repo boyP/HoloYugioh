@@ -79,7 +79,7 @@
     </RelativeLayout>
 
     <game.CardButton
-        android:text="Left"
+        android:text="@string/pendulum_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/relativeLayout"
@@ -89,7 +89,7 @@
         android:id="@+id/pendulum_left" />
 
     <game.CardButton
-        android:text="Grave"
+        android:text="@string/graveyard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/pendulum_left"
@@ -99,7 +99,7 @@
         android:id="@+id/grave" />
 
     <game.CardButton
-        android:text="Field"
+        android:text="@string/field_spell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/pendulum_right"
@@ -109,7 +109,7 @@
         android:id="@+id/field_spell" />
 
     <game.CardButton
-        android:text="Right"
+        android:text="@string/pendulum_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/pendulum_right"

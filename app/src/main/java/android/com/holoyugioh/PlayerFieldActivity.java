@@ -19,6 +19,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_player_field);
 
         initializeButtons();
+        // TODO Update field from firebase
     }
 
     private void initializeButtons() {
@@ -69,7 +70,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
 
-        Intent intent = null;
+        Intent intent;
 
         switch (view.getId()) {
             case R.id.back:

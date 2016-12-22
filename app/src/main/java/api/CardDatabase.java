@@ -2,7 +2,6 @@ package api;
 
 import android.util.Log;
 
-
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONException;
@@ -19,8 +18,15 @@ public class CardDatabase {
 
     private static final String ERROR_TAG = "API ERROR";
 
-    public CardDatabase() {
+    private static final String DATA = "data";
+    private static final String STATUS = "status";
+    private static final String MSG = "message";
+    private static final String SUCCESS = "success";
 
+    private OnDataReadyListener listener;
+
+    public CardDatabase(OnDataReadyListener listener) {
+        this.listener = listener;
     }
 
     public void getCardDetails(String cardName) {
@@ -32,11 +38,19 @@ public class CardDatabase {
                 // Handle resulting parsed JSON response here
                 try {
                     Log.d("SUCCESS", "returned " + statusCode);
-                    JSONObject data = response.getJSONObject("data");
-                    Card card = new Card();
-                    card.createCardFromJSON(data);
+                    String status = response.getString(STATUS);
 
-                    Log.d("SUCCESS", card.getDescription());
+                    if (status.equals(SUCCESS)) {
+                        JSONObject data = response.getJSONObject(DATA);
+                        Card card = new Card();
+                        card.createCardFromJSON(data);
+                        listener.onDataReady(card);
+                    }
+                    else {
+                        String msg = response.getString(MSG);
+                        Log.e(ERROR_TAG, msg);
+                        listener.onDataReady(null);
+                    }
                 }
                 catch (JSONException e) {
                     Log.e(ERROR_TAG, e.toString());

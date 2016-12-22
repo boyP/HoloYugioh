@@ -16,14 +16,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import api.CardDatabase;
+import api.OnDataReadyListener;
 import game.Card;
 
 /**
  * This activity reads for NFC Cards
  */
-public class NfcActivity extends AppCompatActivity implements View.OnClickListener {
+public class NfcActivity extends AppCompatActivity implements View.OnClickListener, OnDataReadyListener{
 
     final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
+    final protected static String API_ERROR_MSG = "Card does not exist in database";
 
     private final static String CARD_PARCEL = "CARD";
 
@@ -32,6 +35,8 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
     private IntentFilter[] intentFilterArray;
     private String[][] techListArray;
     private NfcAdapter mNfcAdapter;
+
+    private CardDatabase cardDatabase;
 
     public static String bytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
@@ -73,6 +78,8 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
 
         initializeButtons();
 
+        // Card API Initialization
+        cardDatabase = new CardDatabase(this);
     }
 
     private void initializeButtons() {
@@ -118,15 +125,7 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
             Log.d("TAG", str);
 
             // Perform action when card read
-
-            // TODO VALIDATE CARD IN YUGIOH API
-
-            Card card = new Card("TESTING 123", "Spell", "Do stuff");
-
-            Intent placementIntent = new Intent(this, PlaceCardActivity.class);
-            placementIntent.putExtra(CARD_PARCEL, card);
-            startActivity(placementIntent);
-            finish();
+            cardDatabase.getCardDetails("Polymerization");
         }
     }
 
@@ -142,6 +141,20 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
 
             default:
                 break;
+        }
+    }
+
+    @Override
+    public void onDataReady(Card card) {
+
+        if (card == null) {
+            Toast.makeText(this, API_ERROR_MSG, Toast.LENGTH_LONG).show();
+        }
+        else {
+            Intent placementIntent = new Intent(this, PlaceCardActivity.class);
+            placementIntent.putExtra(CARD_PARCEL, card);
+            startActivity(placementIntent);
+            finish();
         }
     }
 }

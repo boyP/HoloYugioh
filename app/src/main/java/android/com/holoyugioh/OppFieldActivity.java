@@ -22,6 +22,8 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_opp_field);
 
         initializeButtons();
+
+        // TODO Update field from firebase
     }
 
     private void initializeButtons() {
@@ -72,7 +74,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
 
-        Intent intent = null;
+        Intent intent;
         switch (view.getId()) {
             case R.id.back:
 

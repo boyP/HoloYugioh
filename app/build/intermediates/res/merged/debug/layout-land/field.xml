@@ -15,27 +15,27 @@
             android:layout_height="wrap_content"
             android:id="@+id/monster_zone">
 
-            <ImageButton
+            <game.CardButton
                 app:srcCompat="@mipmap/ic_launcher"
                 android:id="@+id/monster_1"
                 style="@style/ZoneButton"/>
 
-            <ImageButton
+            <game.CardButton
                 app:srcCompat="@mipmap/ic_launcher"
                 android:id="@+id/monster_2"
                 style="@style/ZoneButton"/>
 
-            <ImageButton
+            <game.CardButton
                 app:srcCompat="@mipmap/ic_launcher"
                 android:id="@+id/monster_3"
                 style="@style/ZoneButton"/>
 
-            <ImageButton
+            <game.CardButton
                 app:srcCompat="@mipmap/ic_launcher"
                 android:id="@+id/monster_4"
                 style="@style/ZoneButton"/>
 
-            <ImageButton
+            <game.CardButton
                 app:srcCompat="@mipmap/ic_launcher"
                 android:id="@+id/monster_5"
                 style="@style/ZoneButton"/>
@@ -48,68 +48,67 @@
             android:id="@+id/magic_zone"
             android:orientation="horizontal">
 
-            <ImageButton
-                app:srcCompat="@mipmap/ic_launcher"
+            <game.CardButton
                 style="@style/ZoneButton"
                 android:id="@+id/magic_1" />
 
-            <ImageButton
-                app:srcCompat="@mipmap/ic_launcher"
+            <game.CardButton
                 style="@style/ZoneButton"
                 android:id="@+id/magic_2" />
 
-            <ImageButton
-                app:srcCompat="@mipmap/ic_launcher"
+            <game.CardButton
                 style="@style/ZoneButton"
                 android:id="@+id/magic_3" />
 
-            <ImageButton
-                app:srcCompat="@mipmap/ic_launcher"
+            <game.CardButton
                 style="@style/ZoneButton"
                 android:id="@+id/magic_4" />
 
-            <ImageButton
-                app:srcCompat="@mipmap/ic_launcher"
+            <game.CardButton
                 style="@style/ZoneButton"
                 android:id="@+id/magic_5" />
         </LinearLayout>
 
     </RelativeLayout>
 
-    <Button
-        android:text="Pend 1"
+    <game.CardButton
+        android:text="@string/pendulum_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/relativeLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/button2" />
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/pendulum_left" />
 
-    <Button
-        android:text="Grave"
+    <game.CardButton
+        android:text="@string/graveyard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
-        android:layout_alignRight="@+id/button2"
-        android:layout_alignEnd="@+id/button2"
-        android:id="@+id/button3" />
+        android:layout_above="@+id/pendulum_left"
+        android:layout_alignRight="@+id/pendulum_left"
+        android:layout_alignEnd="@+id/pendulum_left"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/grave" />
 
-    <Button
-        android:text="Pend 2"
+    <game.CardButton
+        android:text="@string/field_spell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button3"
+        android:layout_above="@+id/pendulum_right"
+        android:layout_alignLeft="@+id/pendulum_right"
+        android:layout_alignStart="@+id/pendulum_right"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/field_spell" />
+
+    <game.CardButton
+        android:text="@string/pendulum_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pendulum_right"
+        android:layout_above="@+id/relativeLayout"
+        android:src="@mipmap/ic_launcher"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/button4" />
-
-    <Button
-        android:text="Field"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button4"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_alignStart="@+id/button4"
-        android:id="@+id/button5" />
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

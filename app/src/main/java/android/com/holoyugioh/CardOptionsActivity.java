@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import Constants.Constants;
 import game.Card;
 
 public class CardOptionsActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private final static String CARD_PARCEL = "CARD";
     private static Card card;
 
     @Override
@@ -22,7 +22,7 @@ public class CardOptionsActivity extends AppCompatActivity implements View.OnCli
 
         initializeButtons();
 
-        card = getIntent().getParcelableExtra(CARD_PARCEL);
+        card = getIntent().getParcelableExtra(Constants.CARD_PARCEL);
 
         TextView name = (TextView) findViewById(R.id.card_name);
         name.setText(card.getName());
@@ -46,7 +46,7 @@ public class CardOptionsActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
 
-        Intent intent = null;
+        Intent intent;
 
         switch (view.getId()) {
 
@@ -84,7 +84,7 @@ public class CardOptionsActivity extends AppCompatActivity implements View.OnCli
             case R.id.view_details:
 
                 intent = new Intent(this, CardDetailsActivity.class);
-                intent.putExtra(CARD_PARCEL, card);
+                intent.putExtra(Constants.CARD_PARCEL, card);
 
                 startActivity(intent);
                 break;

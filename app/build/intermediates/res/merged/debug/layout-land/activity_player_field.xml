@@ -14,7 +14,7 @@
     <include layout="@layout/field" />
 
     <Button
-        android:text="Back"
+        android:text="@string/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -23,11 +23,11 @@
         android:id="@+id/back" />
 
     <Button
-        android:text="End Turn"
+        android:text="@string/end_turn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/end_turn" />
+        android:id="@+id/end_turn"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

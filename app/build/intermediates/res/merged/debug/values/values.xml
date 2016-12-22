@@ -608,21 +608,24 @@
     <string name="def">DEF</string>
     <string name="default_web_client_id" translatable="false">844665268262-9rhc6a6jkq60qtedfsrlr2faa37jova7.apps.googleusercontent.com</string>
     <string name="destroy">Destroy</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="effect">EFFECT</string>
+    <string name="end_turn">End Turn</string>
     <string name="face_down">Face Down</string>
     <string name="face_up">Face Up</string>
+    <string name="field_spell">Fieldy</string>
     <string name="firebase_database_url" translatable="false">https://holoyugioh.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">844665268262</string>
     <string name="google_api_key" translatable="false">AIzaSyAbwcP9SjbKHd9ACyx4LfyVxN07D-Ttyck</string>
     <string name="google_app_id" translatable="false">1:844665268262:android:1e95eac1a10d9142</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAbwcP9SjbKHd9ACyx4LfyVxN07D-Ttyck</string>
     <string name="google_storage_bucket" translatable="false">holoyugioh.appspot.com</string>
+    <string name="graveyard">Grave</string>
     <string name="menu">Menu</string>
     <string name="nfc">Tap card to back of phone!</string>
     <string name="oppLP">Opponent LP</string>
     <string name="opp_field">View Opponent Field</string>
+    <string name="pendulum_left">Left</string>
+    <string name="pendulum_right">Right</string>
     <string name="pref_default_display_name">John Smith</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact
         based on your message history
@@ -641,6 +644,7 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="remove_play">Remove from Play</string>
     <string name="search_menu_title">Search</string>
+    <string name="start">Duel!</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_splash">SplashActivity</string>
@@ -657,7 +661,7 @@
         <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -1678,9 +1682,9 @@
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
     </style>
     <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <!-- Used for the title and text -->
+        
         <item name="android:textColorPrimary">#000000</item>
-        <!-- Used for the background -->
+        
         <item name="android:background">#FFFFFF</item>
     </style>
     <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
