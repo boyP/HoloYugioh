@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import Constants.Constants;
 import api.CardDatabase;
 import api.OnDataReadyListener;
 import game.Card;
@@ -28,8 +29,6 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
     final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
     final protected static String API_ERROR_MSG = "Card does not exist in database";
 
-    private final static String CARD_PARCEL = "CARD";
-
     // For NFC Dispatching
     private PendingIntent pendingIntent;
     private IntentFilter[] intentFilterArray;
@@ -37,6 +36,7 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
     private NfcAdapter mNfcAdapter;
 
     private CardDatabase cardDatabase;
+    private int fieldPosition;
 
     public static String bytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
@@ -80,6 +80,10 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
 
         // Card API Initialization
         cardDatabase = new CardDatabase(this);
+
+        // Retrieve card field position from intent
+        fieldPosition = getIntent().getIntExtra(Constants.FIELD_POSITION, 0);
+
     }
 
     private void initializeButtons() {
@@ -152,7 +156,8 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
         }
         else {
             Intent placementIntent = new Intent(this, PlaceCardActivity.class);
-            placementIntent.putExtra(CARD_PARCEL, card);
+            placementIntent.putExtra(Constants.CARD_PARCEL, card);
+            placementIntent.putExtra(Constants.FIELD_POSITION, fieldPosition);
             startActivity(placementIntent);
             finish();
         }

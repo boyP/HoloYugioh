@@ -9,11 +9,13 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import Constants.Constants;
+import firebase.GameState;
 import game.Card;
 
 public class CardOptionsActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private static Card card;
+    private Card card;
+    private int fieldPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class CardOptionsActivity extends AppCompatActivity implements View.OnCli
 
         initializeButtons();
 
+        fieldPosition = getIntent().getIntExtra(Constants.FIELD_POSITION, 0);
         card = getIntent().getParcelableExtra(Constants.CARD_PARCEL);
 
         TextView name = (TextView) findViewById(R.id.card_name);
@@ -59,7 +62,7 @@ public class CardOptionsActivity extends AppCompatActivity implements View.OnCli
 
             case R.id.destroy:
 
-                // TODO Update Firebase with new information
+                GameState.writeRemoveCard(card, fieldPosition);
                 intent = new Intent(this, PlayerFieldActivity.class);
                 startActivity(intent);
                 finish();
@@ -67,7 +70,8 @@ public class CardOptionsActivity extends AppCompatActivity implements View.OnCli
 
             case R.id.change_pos:
 
-                // TODO Update Firebase with new information
+                // TODO Actually change position
+                GameState.writeChangeCardPosition(card, fieldPosition, Constants.FACE_UP_DEF_POSITION);
                 intent = new Intent(this, PlayerFieldActivity.class);
                 startActivity(intent);
                 finish();
@@ -75,7 +79,7 @@ public class CardOptionsActivity extends AppCompatActivity implements View.OnCli
 
             case R.id.remove_play:
 
-                // TODO Update Firebase with new information
+                GameState.writeRemoveCard(card, fieldPosition);
                 intent = new Intent(this, PlayerFieldActivity.class);
                 startActivity(intent);
                 finish();

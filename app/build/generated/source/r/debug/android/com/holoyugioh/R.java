@@ -2876,7 +2876,12 @@ containing a value of this type.
         public static final int menu_main=0x7f0f0000;
     }
     public static final class mipmap {
-        public static final int ic_launcher=0x7f030000;
+        public static final int def_monster=0x7f030000;
+        public static final int ic_launcher=0x7f030001;
+        public static final int monster=0x7f030002;
+        public static final int set_monster=0x7f030003;
+        public static final int set_spell=0x7f030004;
+        public static final int spell=0x7f030005;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f070000;

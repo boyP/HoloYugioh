@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/spell.jpg",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/mipmap-mdpi/spell.jpg"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/def_monster.jpg",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/mipmap-mdpi/def_monster.jpg"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/set_monster.jpg",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/mipmap-mdpi/set_monster.jpg"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/monster.jpg",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/mipmap-mdpi/monster.jpg"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/set_spell.jpg",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/mipmap-mdpi/set_spell.jpg"
+    }
+]

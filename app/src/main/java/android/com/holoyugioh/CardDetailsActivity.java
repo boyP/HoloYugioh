@@ -18,6 +18,8 @@ public class CardDetailsActivity extends AppCompatActivity implements View.OnCli
 
         initializeButtons();
 
+        // TODO Call API to get card details from card name
+
         // Get card information from previous activity
         Card card = getIntent().getParcelableExtra(Constants.CARD_PARCEL);
         populateCardDetails(card);

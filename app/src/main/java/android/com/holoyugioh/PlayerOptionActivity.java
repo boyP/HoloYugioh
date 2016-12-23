@@ -17,7 +17,7 @@ public class PlayerOptionActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_option);
-
+        
         initializeButtons();
     }
 

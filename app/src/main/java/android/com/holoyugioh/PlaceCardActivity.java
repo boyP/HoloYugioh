@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import Constants.Constants;
+import firebase.GameState;
 import game.Card;
 
 public class PlaceCardActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private final static String CARD_PARCEL = "CARD";
+    private Card card;
+    private int fieldPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,9 @@ public class PlaceCardActivity extends AppCompatActivity implements View.OnClick
 
         initializeButtons();
 
-        Card card = getIntent().getParcelableExtra(CARD_PARCEL);
+        card = getIntent().getParcelableExtra(Constants.CARD_PARCEL);
+        fieldPosition = getIntent().getIntExtra(Constants.FIELD_POSITION, 0);
+
         TextView cardName = (TextView) findViewById(R.id.card_name);
         cardName.setText(card.getName());
     }
@@ -40,19 +45,18 @@ public class PlaceCardActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
 
-        // Bundle card information and button press
-
-        Intent intent = null;
+        Intent intent;
 
         switch (view.getId()) {
             case R.id.face_down:
 
+                GameState.writePlaceCard(card, fieldPosition, Constants.FACE_DOWN_POSITION);
                 intent = new Intent(this, PlayerFieldActivity.class);
-
                 break;
 
             case R.id.face_up:
 
+                GameState.writePlaceCard(card, fieldPosition, Constants.FACE_UP_POSITION);
                 intent = new Intent(this, PlayerFieldActivity.class);
                 break;
 
@@ -62,8 +66,6 @@ public class PlaceCardActivity extends AppCompatActivity implements View.OnClick
                 intent = new Intent(this, NfcActivity.class);
                 break;
         }
-
-        // TODO UPDATE FIREBASE WITH NEW INFORMATION IF FACEDOWN OR FACEUP WAS PRESSED
 
         startActivity(intent);
         finish();

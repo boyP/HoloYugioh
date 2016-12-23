@@ -1,0 +1,107 @@
+{
+    "Field Spell": "",
+    "Pendulum Left": "",
+    "Pendulum Right": "",
+    "Players": {
+      "Player1": {
+        "Field": {
+          "Monster": {
+            "Card1": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card2": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card3": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card4": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card5": {
+              "Name": "",
+              "Position": 0
+            }
+          },
+          "Spell-Trap": {
+            "Card1": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card2": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card3": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card4": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card5": {
+              "Name": "",
+              "Position": 0
+            }
+          }
+        },
+        "Life Points": 8000,
+        "Name": ""
+      },
+      "Player2": {
+        "Field": {
+          "Monster": {
+            "Card1": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card2": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card3": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card4": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card5": {
+              "Name": "",
+              "Position": 0
+            }
+          },
+          "Spell-Trap": {
+            "Card1": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card2": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card3": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card4": {
+              "Name": "",
+              "Position": 0
+            },
+            "Card5": {
+              "Name": "",
+              "Position": 0
+            }
+          }
+        },
+        "Life Points": 8000,
+        "Name": ""
+      }
+    }
+}

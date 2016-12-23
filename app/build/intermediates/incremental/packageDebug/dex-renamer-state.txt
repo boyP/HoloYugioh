@@ -1,4 +1,4 @@
-#Thu Dec 22 10:34:18 MST 2016
+#Fri Dec 23 11:22:13 MST 2016
 base.0=/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6f8bd2f4fff30e66a6f06287ca9ed9e79998eed8
 renamed.1=classes.dex
 renamed.0=classes2.dex

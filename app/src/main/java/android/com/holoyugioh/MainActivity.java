@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import firebase.GameState;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
@@ -42,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void initializeGame() {
         // Start new game
-        // Reset lifepoints to 8000
-        // Reset player's field
+        GameState.initializePlayer(1);
+        GameState.initializePlayer(2);
 
         // Start game
         Intent intent = new Intent(this, PlayerOptionActivity.class);

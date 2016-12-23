@@ -7,6 +7,7 @@ import android.widget.ImageButton;
 public class CardButton extends ImageButton {
 
     private Card card;
+    private int fieldPosition;
 
     public CardButton(Context context) {
 
@@ -26,9 +27,10 @@ public class CardButton extends ImageButton {
         return card;
     }
 
-    public void setCard(Card card) {
-        this.card = card;
-    }
+    public void setFieldPosition(int fieldPosition) { this.fieldPosition = fieldPosition; }
+    public int getFieldPosition() { return fieldPosition; }
+
+    public void setCard(Card card) { this.card = card; }
 
     public boolean isEmptySlot() {
         return this.card == null;
