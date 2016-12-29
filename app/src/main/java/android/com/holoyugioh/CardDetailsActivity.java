@@ -3,13 +3,19 @@ package android.com.holoyugioh;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import Constants.Constants;
+import api.CardDatabase;
+import api.OnDataReadyListener;
 import game.Card;
 
-public class CardDetailsActivity extends AppCompatActivity implements View.OnClickListener{
+public class CardDetailsActivity extends AppCompatActivity implements View.OnClickListener, OnDataReadyListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +24,11 @@ public class CardDetailsActivity extends AppCompatActivity implements View.OnCli
 
         initializeButtons();
 
-        // TODO Call API to get card details from card name
+        CardDatabase cardDatabase = new CardDatabase(this);
 
         // Get card information from previous activity
         Card card = getIntent().getParcelableExtra(Constants.CARD_PARCEL);
-        populateCardDetails(card);
+        cardDatabase.getCardDetails(card.getName());
     }
 
     private void initializeButtons() {
@@ -30,22 +36,39 @@ public class CardDetailsActivity extends AppCompatActivity implements View.OnCli
         back.setOnClickListener(this);
     }
 
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            // Respond to the action bar's Up/Home button
+//            case android.R.id.home:
+//                finish();
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
+
     private void populateCardDetails(Card card) {
-        TextView name = (TextView) findViewById(R.id.card_name);
+        ArrayList<String> details = new ArrayList<>();
 
-        TextView atk = (TextView) findViewById(R.id.atk_field);
-        TextView def = (TextView) findViewById(R.id.def_field);
+        if (card.getCardType().equals(Constants.MONSTER.toLowerCase())) {
+            details.add("Name: " + card.getName());
+            details.add("Effect: " + card.getDescription());
+            details.add("Card Type: " + card.getCardType());
+            details.add("Type: " + card.getType());
+            details.add("Family: " + card.getFamily());
+            details.add("ATK: " + card.getAtk());
+            details.add("DEF: " + card.getDef());
+            details.add("Level: " + card.getLevel());
+        }
+        else {
+            details.add("Name: " + card.getName());
+            details.add("Effect: " + card.getDescription());
+            details.add("Card Type: " + card.getCardType());
+            details.add("Property: " + card.getProperty());
+        }
 
-        TextView cardType = (TextView) findViewById(R.id.card_type_field);
-
-        TextView type = (TextView) findViewById(R.id.type_field);
-        TextView attribute = (TextView) findViewById(R.id.attribute_field);
-        TextView effect = (TextView) findViewById(R.id.description_field);
-
-
-        name.setText(card.getName());
-        cardType.setText(card.getCardType());
-        effect.setText(card.getDescription());
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item, details);
+        ListView listView = (ListView) findViewById(R.id.card_details);
+        listView.setAdapter(adapter);
     }
 
     @Override
@@ -58,6 +81,16 @@ public class CardDetailsActivity extends AppCompatActivity implements View.OnCli
 
             default:
                 break;
+        }
+    }
+
+    @Override
+    public void onDataReady(Card card) {
+        if (card == null) {
+            Toast.makeText(this, "API Error", Toast.LENGTH_LONG).show();
+        }
+        else {
+            populateCardDetails(card);
         }
     }
 }

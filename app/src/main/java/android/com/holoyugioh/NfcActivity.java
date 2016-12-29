@@ -129,7 +129,7 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
             Log.d("TAG", str);
 
             // Perform action when card read
-            cardDatabase.getCardDetails("Polymerization");
+            cardDatabase.getCardDetails("Junk Synchron");
         }
     }
 

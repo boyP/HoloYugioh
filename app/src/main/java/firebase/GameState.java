@@ -33,6 +33,10 @@ public class GameState {
     public static final String NAME = "Name";
     public static final String POSITION = "Position";
 
+    /**
+     * Initializes firebase for a new game
+     * @param playerNum : the player's field to reset. Player 1 = 1, Player 2 = 2.
+     */
     public static void initializePlayer(int playerNum) {
         mDatabase = FirebaseDatabase.getInstance().getReference(TOP_REFERENCE);
 
@@ -95,6 +99,11 @@ public class GameState {
         spell.child(CARD5).child(POSITION).setValue(0);
     }
 
+    /**
+     * Get the Monster card path in the firebase database for reading and writing given a player
+     * @param player : The player. Player 1 = 1, Player 2 = 2
+     * @return The path to the player's monster zone in firebase
+     */
     public static DatabaseReference getMonsterCardPath(int player) {
         if (player == 1) {
             return mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD).child(MONSTER);
@@ -104,6 +113,11 @@ public class GameState {
         }
     }
 
+    /**
+     * Get the Spell/Trap card path in the firebase database for reading and writing given a player
+     * @param player : The player. Player 1 = 1, Player 2 = 2
+     * @return The path to the player's spell/trap zone in firebase
+     */
     public static DatabaseReference getSpellCardPath(int player) {
         if (player == 1) {
             return mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD).child(SPELL_TRAP);
@@ -113,10 +127,19 @@ public class GameState {
         }
     }
 
+    /**
+     * Get the Field Spell card path in the firebase database for reading and writing given a player
+     * @return The path to the field spell zone in firebase
+     */
     public static DatabaseReference getFieldSpellPath() {
         return mDatabase.child(FIELD_SPELL);
     }
 
+    /**
+     * Get the Left Pendulum card path in the firebase database for reading and writing given a player
+     * @param player : The player. Player 1 = 1, Player 2 = 2
+     * @return The path to the player's left pendulum zone in firebase
+     */
     public static DatabaseReference getPendulumLeftPath(int player) {
         if (player == 1) {
             return mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD).child(PENDULUM_LEFT);
@@ -126,6 +149,11 @@ public class GameState {
         }
     }
 
+    /**
+     * Get the Right Pendulum card path in the firebase database for reading and writing given a player
+     * @param player : The player. Player 1 = 1, Player 2 = 2
+     * @return The path to the player's right pendulum zone in firebase
+     */
     public static DatabaseReference getPendulumRightPath(int player) {
         if (player == 1) {
             return mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD).child(PENDULUM_RIGHT);
@@ -177,6 +205,11 @@ public class GameState {
         path.child(POSITION).setValue(Constants.DESTROY_POSITION);
     }
 
+    /**
+     * Helper function to get the firebase path given a card position on the field. A mapping from the UI to firebase.
+     * @param fieldPosition A position number ranging from 1 to 13.
+     * @return The database reference to the card at fieldPosition
+     */
     private static DatabaseReference getFirebasePathFromCardPosition(int fieldPosition) {
 
         DatabaseReference field = mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD);

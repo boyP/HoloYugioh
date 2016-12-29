@@ -7,6 +7,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import Constants.Constants;
 import cz.msebera.android.httpclient.Header;
 import game.Card;
 
@@ -29,7 +30,7 @@ public class CardDatabase {
         this.listener = listener;
     }
 
-    public void getCardDetails(String cardName) {
+    public void getCardDetails(final String cardName) {
 
         YugiohRestClient.get(cardName, null, new JsonHttpResponseHandler() {
             @Override
@@ -42,7 +43,7 @@ public class CardDatabase {
 
                     if (status.equals(SUCCESS)) {
                         JSONObject data = response.getJSONObject(DATA);
-                        Card card = new Card();
+                        Card card = new Card(Constants.FACE_UP_POSITION);
                         card.createCardFromJSON(data);
                         listener.onDataReady(card);
                     }

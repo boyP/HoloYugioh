@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="b670c00266e280b9ced57e369a2a2bc0aa3c72c1">
+        sha1="b250f528165096bc561bf05fef5e748225c84139">
         <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6f8bd2f4fff30e66a6f06287ca9ed9e79998eed8/classes.dex" />
     </item>
     <item
@@ -241,7 +241,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="1113aa94dfe088df57e45fc5117acc2516a23560">
+        sha1="996a2f0a3ad6df790ded7cfc4daa218e46b9c1ec">
         <dex dex="/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e75e89ec04028a961eab968a1678eb70bd2e3d98/classes.dex" />
     </item>
     <item

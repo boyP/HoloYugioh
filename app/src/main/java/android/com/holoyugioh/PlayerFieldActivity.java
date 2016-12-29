@@ -78,7 +78,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
                 long pos = (Long) fieldSpell.get(GameState.POSITION);
 
                 if (!name.equals("")) {
-                    field.setCard(new Card(name, "", "Spell"));
+                    field.setCard(new Card(name, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         field.setImageResource(R.mipmap.spell);
                     }
@@ -102,7 +102,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
                 long pos = (Long) pend.get(GameState.POSITION);
 
                 if (!name.equals("")) {
-                    pend_left.setCard(new Card(name, "", "Spell"));
+                    pend_left.setCard(new Card(name, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         pend_left.setImageResource(R.mipmap.spell);
                     }
@@ -126,7 +126,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
                 long pos = (Long) pend.get(GameState.POSITION);
 
                 if (!name.equals("")) {
-                    pend_right.setCard(new Card(name, "", "Spell"));
+                    pend_right.setCard(new Card(name, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         pend_right.setImageResource(R.mipmap.spell);
                     }
@@ -272,7 +272,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
         long pos = (Long) card.get(GameState.POSITION);
 
         if (!name.equals("")) {
-            cardButton.setCard(new Card(name, "", "Monster"));
+            cardButton.setCard(new Card(name, pos));
             if (pos == Constants.FACE_UP_POSITION) {
                 cardButton.setImageResource(R.mipmap.monster);
             }
@@ -290,7 +290,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
         long pos = (Long) card.get(GameState.POSITION);
 
         if (!name.equals("")) {
-            cardButton.setCard(new Card(name, "", "Spell"));
+            cardButton.setCard(new Card(name, pos));
             if (pos == Constants.FACE_UP_POSITION) {
                 cardButton.setImageResource(R.mipmap.spell);
             }

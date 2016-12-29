@@ -12,15 +12,6 @@
     tools:context="android.com.holoyugioh.CardOptionsActivity">
 
     <Button
-        android:text="@string/view_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:id="@+id/view_details" />
-
-    <Button
         android:text="@string/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,60 +27,73 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/card_name" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_below="@+id/back"
-        android:layout_toRightOf="@+id/back"
-        android:layout_toEndOf="@+id/back"
-        android:layout_marginTop="264dp"
-        android:id="@+id/destroy" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/destroy"
-        android:layout_alignLeft="@+id/card_name"
-        android:layout_alignStart="@+id/card_name"
-        android:id="@+id/change_pos" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/spell"
+            android:layout_marginLeft="@dimen/optiom_margin"
+            android:layout_marginRight="@dimen/optiom_margin"
+            android:id="@+id/destroy" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_sync_black_24dp"
-        android:layout_alignTop="@+id/change_pos"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="75dp"
-        android:layout_marginEnd="75dp"
-        android:id="@+id/remove_play" />
+        <TextView
+            android:text="@string/destroy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/destroy"
+            android:layout_alignLeft="@+id/destroy"
+            android:layout_alignRight="@+id/destroy"
+            android:id="@+id/destroy_label" />
 
-    <TextView
-        android:text="@string/destroy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/destroy_label"
-        android:layout_below="@+id/destroy"
-        android:layout_alignLeft="@+id/destroy"
-        android:layout_alignStart="@+id/destroy" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/monster"
+            android:layout_toRightOf="@+id/destroy"
+            android:layout_marginLeft="@dimen/optiom_margin"
+            android:layout_marginRight="@dimen/optiom_margin"
+            android:id="@+id/change_pos" />
 
-    <TextView
-        android:text="@string/change_pos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/change_pos"
-        android:layout_alignEnd="@+id/change_pos"
-        android:id="@+id/change_pos_label" />
+        <TextView
+            android:text="@string/change_pos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/change_pos"
+            android:layout_alignLeft="@+id/change_pos"
+            android:layout_alignRight="@+id/change_pos"
+            android:id="@+id/change_pos_label" />
 
-    <TextView
-        android:text="@string/remove_play"
-        android:layout_width="wrap_content"
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/monster"
+            android:layout_toRightOf="@+id/change_pos"
+            android:layout_marginLeft="@dimen/optiom_margin"
+            android:layout_marginRight="@dimen/optiom_margin"
+            android:id="@+id/remove_play" />
+
+        <TextView
+            android:text="@string/remove_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/remove_play"
+            android:layout_alignLeft="@+id/remove_play"
+            android:layout_alignRight="@+id/remove_play"
+            android:id="@+id/remove_play_label" />
+
+    </RelativeLayout>
+
+    <Button
+        android:text="@string/view_details"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/remove_play"
-        android:layout_alignLeft="@+id/remove_play"
-        android:layout_alignStart="@+id/remove_play"
-        android:id="@+id/remove_play_label" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/view_details" />
+
 </RelativeLayout>

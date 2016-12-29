@@ -3,7 +3,6 @@ package android.com.holoyugioh;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -69,7 +68,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
                 long pos = (Long) fieldSpell.get(GameState.POSITION);
 
                 if (!name.equals("")) {
-                    field.setCard(new Card(name, "", "Spell"));
+                    field.setCard(new Card(name, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         field.setImageResource(R.mipmap.spell);
                     }
@@ -93,7 +92,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
                 long pos = (Long) pend.get(GameState.POSITION);
 
                 if (!name.equals("")) {
-                    pend_left.setCard(new Card(name, "", "Spell"));
+                    pend_left.setCard(new Card(name, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         pend_left.setImageResource(R.mipmap.spell);
                     }
@@ -117,7 +116,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
                 long pos = (Long) pend.get(GameState.POSITION);
 
                 if (!name.equals("")) {
-                    pend_right.setCard(new Card(name, "", "Spell"));
+                    pend_right.setCard(new Card(name, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         pend_right.setImageResource(R.mipmap.spell);
                     }
@@ -138,7 +137,6 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map monster = (Map) dataSnapshot.getValue();
-                Log.d("DATA", monster.toString());
 
                 Map card1 = (Map) monster.get(GameState.CARD1);
                 placeMonsterCard(card1, mon1);
@@ -167,7 +165,6 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map spell = (Map) dataSnapshot.getValue();
-                Log.d("DATA", spell.toString());
 
                 Map card1 = (Map) spell.get(GameState.CARD1);
                 placeSpellCard(card1, magic1);
@@ -236,16 +233,24 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
             default:
                 CardButton button = (CardButton) findViewById(view.getId());
                 if (!button.isEmptySlot()) {
-                    intent = new Intent(this, CardDetailsActivity.class);
 
                     Card card = button.getCard();
-                    intent.putExtra(Constants.CARD_PARCEL, card);
 
-                    startActivity(intent);
-                    finish();
+                    // Cannot view opponent card if face down
+                    if (card.getPosition() == Constants.FACE_DOWN_POSITION) {
+                        Toast toast = Toast.makeText(this, Constants.CANNOT_VIEW_CARD, Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    else {
+                        intent = new Intent(this, CardDetailsActivity.class);
+                        intent.putExtra(Constants.CARD_PARCEL, card);
+
+                        startActivity(intent);
+                        finish();
+                    }
                 }
                 else {
-                    Toast toast = Toast.makeText(this, "No Card Placed", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(this, Constants.NO_CARD_PLACED, Toast.LENGTH_SHORT);
                     toast.show();
                 }
 
@@ -258,7 +263,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
         long pos = (Long) card.get(GameState.POSITION);
 
         if (!name.equals("")) {
-            cardButton.setCard(new Card(name, "", "Monster"));
+            cardButton.setCard(new Card(name, pos));
             if (pos == Constants.FACE_UP_POSITION) {
                 cardButton.setImageResource(R.mipmap.monster);
             }
@@ -276,7 +281,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
         long pos = (Long) card.get(GameState.POSITION);
 
         if (!name.equals("")) {
-            cardButton.setCard(new Card(name, "", "Spell"));
+            cardButton.setCard(new Card(name, pos));
             if (pos == Constants.FACE_UP_POSITION) {
                 cardButton.setImageResource(R.mipmap.spell);
             }
