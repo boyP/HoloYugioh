@@ -23,7 +23,7 @@ import game.CardButton;
  */
 public class OppFieldActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private static final int PLAYER = 2;
+    private static final int OPP_PLAYER = GameState.getOpponentPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        GameState.getPendulumLeftPath(PLAYER).addValueEventListener(new ValueEventListener() {
+        GameState.getPendulumLeftPath(OPP_PLAYER).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map pend = (Map) dataSnapshot.getValue();
@@ -108,7 +108,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        GameState.getPendulumRightPath(PLAYER).addValueEventListener(new ValueEventListener() {
+        GameState.getPendulumRightPath(OPP_PLAYER).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map pend = (Map) dataSnapshot.getValue();
@@ -133,7 +133,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
         });
 
         // Monster value listener
-        GameState.getMonsterCardPath(PLAYER).addValueEventListener(new ValueEventListener() {
+        GameState.getMonsterCardPath(OPP_PLAYER).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map monster = (Map) dataSnapshot.getValue();
@@ -161,7 +161,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
         });
 
         // Spell value listener
-        GameState.getSpellCardPath(PLAYER).addValueEventListener(new ValueEventListener() {
+        GameState.getSpellCardPath(OPP_PLAYER).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map spell = (Map) dataSnapshot.getValue();

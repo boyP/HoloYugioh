@@ -33,12 +33,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="android.com.holoyugioh.MainActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
             android:name="android.com.holoyugioh.SplashActivity"
             android:theme="@style/SplashTheme" >
             <intent-filter>
@@ -47,6 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="android.com.holoyugioh.MainActivity" />
         <activity android:name="android.com.holoyugioh.PlayerOptionActivity" />
         <activity android:name="android.com.holoyugioh.OppFieldActivity" />
         <activity android:name="android.com.holoyugioh.PlayerFieldActivity" />
@@ -57,6 +52,7 @@
         <activity android:name="android.com.holoyugioh.PlaceCardActivity" />
         <activity android:name="android.com.holoyugioh.CardDetailsActivity" />
         <activity android:name="android.com.holoyugioh.CardOptionsActivity" />
+        <activity android:name="android.com.holoyugioh.LifePointsCalculatorActivity" />
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

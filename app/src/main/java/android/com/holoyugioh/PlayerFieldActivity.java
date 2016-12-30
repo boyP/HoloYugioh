@@ -20,7 +20,7 @@ import game.CardButton;
 
 public class PlayerFieldActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private static final int PLAYER = 1;
+    private static final int PLAYER = GameState.getPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -15,6 +15,9 @@ public class GameState {
     private static final String PLAYER_1 = "Player1";
     private static final String PLAYER_2 = "Player2";
 
+    private static String CURRENT_PLAYER = "Player1";
+    private static int CURRENT_PLAYER_NUM = 1;
+
     private static final String LIFE_POINTS = "Life Points";
 
     private static final String FIELD = "Field";
@@ -35,18 +38,14 @@ public class GameState {
 
     /**
      * Initializes firebase for a new game
-     * @param playerNum : the player's field to reset. Player 1 = 1, Player 2 = 2.
      */
     public static void initializePlayer(int playerNum) {
         mDatabase = FirebaseDatabase.getInstance().getReference(TOP_REFERENCE);
 
-        DatabaseReference player;
-        if (playerNum == 1) {
-            player = mDatabase.child(PLAYERS).child(PLAYER_1);
-        }
-        else {
-            player = mDatabase.child(PLAYERS).child(PLAYER_2);
-        }
+        CURRENT_PLAYER_NUM = playerNum;
+        CURRENT_PLAYER = playerNum == 1 ? PLAYER_1 : PLAYER_2;
+
+        DatabaseReference player = mDatabase.child(PLAYERS).child(CURRENT_PLAYER);
 
         // Initialize Life Points
         player.child(LIFE_POINTS).setValue(Constants.INITIAL_LIFE_POINTS);
@@ -97,6 +96,14 @@ public class GameState {
 
         spell.child(CARD5).child(NAME).setValue("");
         spell.child(CARD5).child(POSITION).setValue(0);
+    }
+
+    public static int getPlayer() {
+        return CURRENT_PLAYER_NUM;
+    }
+
+    public static int getOpponentPlayer() {
+        return CURRENT_PLAYER_NUM == 1 ? 2 : 1;
     }
 
     /**
@@ -167,8 +174,13 @@ public class GameState {
      * Writes new life points to current player
      * @param newLifePoints : New life points of player
      */
-    public static void writeLifePoints(int newLifePoints) {
-        mDatabase.child(PLAYERS).child(PLAYER_1).child(LIFE_POINTS).setValue(newLifePoints);
+    public static void writeLifePoints(int newLifePoints, int player) {
+        if (player == 1) {
+            mDatabase.child(PLAYERS).child(PLAYER_1).child(LIFE_POINTS).setValue(newLifePoints);
+        }
+        else {
+            mDatabase.child(PLAYERS).child(PLAYER_2).child(LIFE_POINTS).setValue(newLifePoints);
+        }
     }
 
     /**
@@ -212,7 +224,7 @@ public class GameState {
      */
     private static DatabaseReference getFirebasePathFromCardPosition(int fieldPosition) {
 
-        DatabaseReference field = mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD);
+        DatabaseReference field = mDatabase.child(PLAYERS).child(CURRENT_PLAYER).child(FIELD);
         DatabaseReference path;
 
         switch (fieldPosition) {

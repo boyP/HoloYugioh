@@ -10,29 +10,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="android.com.holoyugioh.CardDetailsActivity">
 
-    <Button
-        android:text="@string/back"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/back"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/header">
+
+        <Button
+            android:text="@string/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_details"
+            android:gravity="center"
+            android:id="@+id/title"
+            android:layout_alignBaseline="@+id/back"
+            android:layout_alignBottom="@+id/back"/>
+
+    </RelativeLayout>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/card_details"
-        android:layout_below="@+id/title">
+        android:layout_below="@+id/header">
 
     </ListView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/view_details"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:id="@+id/title"/>
 
 </RelativeLayout>

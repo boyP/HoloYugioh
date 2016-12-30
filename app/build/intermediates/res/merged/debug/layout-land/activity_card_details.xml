@@ -10,114 +10,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="android.com.holoyugioh.CardDetailsActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/card_name" />
+        android:id="@+id/header">
 
+        <Button
+            android:text="@string/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_details"
+            android:gravity="center"
+            android:id="@+id/title"
+            android:layout_alignBaseline="@+id/back"
+            android:layout_alignBottom="@+id/back"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/atk_field" />
+        android:id="@+id/card_details"
+        android:layout_below="@+id/header">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/def_field" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/card_type_field" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/type_field" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/attribute_field" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/description_field" />
-
-    <Button
-        android:text="@string/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/back"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/atk_label"
-        android:text="@string/atk"
-        android:layout_below="@+id/back"
-        android:layout_toRightOf="@+id/card_name"
-        android:layout_toEndOf="@+id/card_name"
-        android:layout_marginTop="18dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/def_label"
-        android:text="@string/def"
-        android:layout_below="@+id/atk_label"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="24dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/card_type_label"
-        android:text="@string/card_type"
-        android:layout_below="@+id/def_label"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="28dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/attribute_label"
-        android:text="@string/attribute"
-        android:layout_below="@+id/card_type_label"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="42dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/description_label"
-        android:text="@string/effect"
-        android:layout_marginTop="66dp"
-        android:layout_below="@+id/type_label"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/type_label"
-        android:text="@string/type"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/attribute_label"
-        android:layout_toRightOf="@+id/card_name"
-        android:layout_toEndOf="@+id/card_name" />
-
+    </ListView>
 
 </RelativeLayout>

@@ -16,13 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -31,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".PlayerOptionActivity" />
         <activity android:name=".OppFieldActivity" />
         <activity android:name=".PlayerFieldActivity" />
@@ -41,6 +35,7 @@
         <activity android:name=".PlaceCardActivity" />
         <activity android:name=".CardDetailsActivity" />
         <activity android:name=".CardOptionsActivity" />
+        <activity android:name=".LifePointsCalculatorActivity"></activity>
     </application>
 
 </manifest>

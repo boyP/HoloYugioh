@@ -3,7 +3,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="title_activity_splash">SplashActivity</string>
-    <string name="start">Duel!</string>
+    <string name="start_p1">Duel as Player 1</string>
+    <string name="start_p2">Duel as Player 2</string>
 
     <!-- PLAYER OPTION STRINGS -->
     <string name="menu">Menu</string>
