@@ -67,7 +67,6 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
         pend_right.setFieldPosition(13);
 
         Button back = (Button) findViewById(R.id.back);
-        Button endTurn = (Button) findViewById(R.id.end_turn);
 
         // Populate field
         GameState.getFieldSpellPath().addValueEventListener(new ValueEventListener() {
@@ -220,7 +219,6 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
         pend_right.setOnClickListener(this);
 
         back.setOnClickListener(this);
-        endTurn.setOnClickListener(this);
     }
 
     @Override
@@ -230,26 +228,18 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
 
         switch (view.getId()) {
             case R.id.back:
-
                 finish();
-                break;
-            case R.id.end_turn:
-
-                // End Turn logic
                 break;
 
             default:
                 // Card press
                 CardButton button = (CardButton) findViewById(view.getId());
-                Log.d("TEST", "The answer is: " + button.isEmptySlot());
 
                 if (button.isEmptySlot()) {
-
                     intent = new Intent(this, NfcActivity.class);
 
                     int fieldPosition = button.getFieldPosition();
                     intent.putExtra(Constants.FIELD_POSITION, fieldPosition);
-                    Log.d(Constants.FIELD_POSITION, "card is at " + fieldPosition);
                     startActivity(intent);
                     finish();
                 }

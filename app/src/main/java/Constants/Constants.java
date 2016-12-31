@@ -22,4 +22,15 @@ public class Constants {
     public static final String NO_CARD_PLACED = "No Card Placed";
     public static final String CANNOT_VIEW_CARD = "Cannot view face-down card";
 
+    // For Card Details
+    public static final String NAME = "Name: ";
+    public static final String EFFECT = "Effect: ";
+    public static final String CARD_TYPE = "Card Type: ";
+    public static final String TYPE = "Type: ";
+    public static final String FAMILY = "Family: ";
+    public static final String ATK = "ATK: ";
+    public static final String DEF = "DEF: ";
+    public static final String LEVEL = "Level: ";
+    public static final String PROPERTY = "Property: ";
+
 }

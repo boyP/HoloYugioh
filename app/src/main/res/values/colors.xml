@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF5722</color>
 
     <color name="black_overlay">#66000000</color>
+
+    <!-- LIFE POINTS -->
+    <color name="your_LP">#3D5AFE</color>
+    <color name="opp_LP">#FF3D00</color>
+
 </resources>

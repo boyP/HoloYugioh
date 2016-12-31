@@ -5,4 +5,8 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="optiom_margin">50dp</dimen>
+
+    <!-- LIFE POINTS -->
+    <dimen name="header_height">50dp</dimen>
+
 </resources>

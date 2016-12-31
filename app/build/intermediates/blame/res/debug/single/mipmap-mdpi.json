@@ -1,5 +1,13 @@
 [
     {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/mipmap-mdpi/back.png",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/mipmap-mdpi/back.png"
+    },
+    {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/mipmap-mdpi/menu.png",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/mipmap-mdpi/menu.png"
+    },
+    {
         "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
         "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }

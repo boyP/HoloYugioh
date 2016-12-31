@@ -28,6 +28,10 @@
         "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/layout-land/activity_opp_field.xml"
     },
     {
+        "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/layout-land/activity_life_points_calculator.xml",
+        "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/layout-land/activity_life_points_calculator.xml"
+    },
+    {
         "merged": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/build/intermediates/res/merged/debug/layout-land/activity_player_option.xml",
         "source": "/Users/pratikprakash/Documents/projects/Yugioh_AR/HoloYugioh/app/src/main/res/layout-land/activity_player_option.xml"
     },

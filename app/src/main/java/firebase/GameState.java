@@ -106,6 +106,15 @@ public class GameState {
         return CURRENT_PLAYER_NUM == 1 ? 2 : 1;
     }
 
+    public static DatabaseReference getLifePointsPath(int player) {
+        if (player == 1) {
+            return mDatabase.child(PLAYERS).child(PLAYER_1).child(LIFE_POINTS);
+        }
+        else {
+            return mDatabase.child(PLAYERS).child(PLAYER_2).child(LIFE_POINTS);
+        }
+    }
+
     /**
      * Get the Monster card path in the firebase database for reading and writing given a player
      * @param player : The player. Player 1 = 1, Player 2 = 2

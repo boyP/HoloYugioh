@@ -3,9 +3,11 @@ package android.com.holoyugioh;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,37 +38,53 @@ public class CardDetailsActivity extends AppCompatActivity implements View.OnCli
         back.setOnClickListener(this);
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            // Respond to the action bar's Up/Home button
-//            case android.R.id.home:
-//                finish();
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
     private void populateCardDetails(Card card) {
-        ArrayList<String> details = new ArrayList<>();
+        final ArrayList<String> titles = new ArrayList<>();
+        final ArrayList<String> details = new ArrayList<>();
 
         if (card.getCardType().equals(Constants.MONSTER.toLowerCase())) {
-            details.add("Name: " + card.getName());
-            details.add("Effect: " + card.getDescription());
-            details.add("Card Type: " + card.getCardType());
-            details.add("Type: " + card.getType());
-            details.add("Family: " + card.getFamily());
-            details.add("ATK: " + card.getAtk());
-            details.add("DEF: " + card.getDef());
-            details.add("Level: " + card.getLevel());
+            titles.add(Constants.NAME);
+            titles.add(Constants.EFFECT);
+            titles.add(Constants.CARD_TYPE);
+            titles.add(Constants.TYPE);
+            titles.add(Constants.FAMILY);
+            titles.add(Constants.ATK);
+            titles.add(Constants.DEF);
+            titles.add(Constants.LEVEL);
+
+            details.add(card.getName());
+            details.add(card.getDescription());
+            details.add(card.getCardType());
+            details.add(card.getType());
+            details.add(card.getFamily());
+            details.add(Integer.toString(card.getAtk()));
+            details.add(Integer.toString(card.getDef()));
+            details.add(Integer.toString(card.getLevel()));
         }
         else {
-            details.add("Name: " + card.getName());
-            details.add("Effect: " + card.getDescription());
-            details.add("Card Type: " + card.getCardType());
-            details.add("Property: " + card.getProperty());
+            titles.add(Constants.NAME);
+            titles.add(Constants.EFFECT);
+            titles.add(Constants.CARD_TYPE);
+            titles.add(Constants.PROPERTY);
+
+            details.add(card.getName());
+            details.add(card.getDescription());
+            details.add(card.getCardType());
+            details.add(card.getProperty());
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item, details);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_2, android.R.id.text1, details) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+
+                text1.setText(titles.get(position));
+                text2.setText(details.get(position));
+                return view;
+            }
+        };
         ListView listView = (ListView) findViewById(R.id.card_details);
         listView.setAdapter(adapter);
     }

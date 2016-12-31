@@ -46,6 +46,10 @@
     <string name="field_spell">Fieldy</string>
     <string name="graveyard">Grave</string>
 
+    <!-- LIFE POINT STRINGS -->
+    <string name="plus">Plus</string>
+    <string name="minus">Minus</string>
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->

@@ -100,6 +100,7 @@
     <color name="material_grey_800">#ff424242</color>
     <color name="material_grey_850">#ff303030</color>
     <color name="material_grey_900">#ff212121</color>
+    <color name="opp_LP">#FF3D00</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -118,6 +119,7 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <color name="your_LP">#3D5AFE</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode">
             
             <enum name="normal" value="0"/>
@@ -534,6 +536,7 @@
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="header_height">50dp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
@@ -622,11 +625,13 @@
     <string name="google_storage_bucket" translatable="false">holoyugioh.appspot.com</string>
     <string name="graveyard">Grave</string>
     <string name="menu">Menu</string>
+    <string name="minus">Minus</string>
     <string name="nfc">Tap card to back of phone!</string>
     <string name="oppLP">Opponent LP</string>
     <string name="opp_field">View Opponent Field</string>
     <string name="pendulum_left">Left</string>
     <string name="pendulum_right">Right</string>
+    <string name="plus">Plus</string>
     <string name="pref_default_display_name">John Smith</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact
         based on your message history
@@ -2145,5 +2150,11 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:text">Hello World</item>
+    </style>
+    <style name="header_text">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 </resources>

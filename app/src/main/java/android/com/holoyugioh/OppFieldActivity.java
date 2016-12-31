@@ -54,8 +54,6 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
         final CardButton pend_left = (CardButton) findViewById(R.id.pendulum_left);
 
         Button back = (Button) findViewById(R.id.back);
-        Button endTurn = (Button) findViewById(R.id.end_turn);
-
 
         //*************************
         //     Populate Field
@@ -211,7 +209,6 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
         pend_right.setOnClickListener(this);
 
         back.setOnClickListener(this);
-        endTurn.setOnClickListener(this);
     }
 
     @Override
@@ -220,14 +217,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
         Intent intent;
         switch (view.getId()) {
             case R.id.back:
-
-                // Back button
                 finish();
-                break;
-
-            case R.id.end_turn:
-
-                // End Turn logic
                 break;
 
             default:
