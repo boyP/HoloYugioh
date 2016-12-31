@@ -5,16 +5,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
-import android.nfc.tech.MifareClassic;
+import android.nfc.tech.Ndef;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 
 import Constants.Constants;
 import api.CardDatabase;
@@ -26,8 +29,10 @@ import game.Card;
  */
 public class NfcActivity extends AppCompatActivity implements View.OnClickListener, OnDataReadyListener{
 
-    final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
+    private static final String MIME_TEXT_PLAIN = "text/plain";
     final protected static String API_ERROR_MSG = "Card does not exist in database";
+    final protected static String INCORRECT_TAG = "Expected NDEF TAG";
+    final protected static String INCORRECT_TAG_MSG = "Expected plain text msg";
 
     // For NFC Dispatching
     private PendingIntent pendingIntent;
@@ -37,19 +42,6 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
 
     private CardDatabase cardDatabase;
     private int fieldPosition;
-
-    public static String bytesToHex(byte[] bytes) {
-        char[] hexChars = new char[bytes.length * 2];
-        for ( int j = 0; j < bytes.length; j++ ) {
-            int v = bytes[j] & 0xFF;
-            hexChars[j * 2] = hexArray[v >>> 4];
-            hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-        }
-        return new String(hexChars);
-    }
-
-
-    // TODO Accept NDEF cards rather than Tag Discovered
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,19 +54,17 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
         pendingIntent = PendingIntent.getActivity(this, 0,
                 new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
 
-        IntentFilter tagDiscovery = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
-
         // Intercept only NDEF Intents
-//        IntentFilter ndef = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
-//        try {
-//            ndef.addDataType("*/*");
-//        }
-//        catch (IntentFilter.MalformedMimeTypeException e) {
-//            throw new RuntimeException("Failed", e);
-//        }
+        IntentFilter ndef = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
+        try {
+            ndef.addDataType(MIME_TEXT_PLAIN);
+        }
+        catch (IntentFilter.MalformedMimeTypeException e) {
+            throw new RuntimeException("Failed", e);
+        }
 
-        intentFilterArray = new IntentFilter[] {tagDiscovery};
-        techListArray = new String[][] { new String[] {MifareClassic.class.getName()}};
+        intentFilterArray = new IntentFilter[] {ndef};
+        techListArray = new String[][] { new String[] {Ndef.class.getName()}};
 
         initializeButtons();
 
@@ -103,6 +93,13 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
         mNfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilterArray, techListArray);
     }
 
+    private String readText(NdefRecord record) throws UnsupportedEncodingException {
+        byte[] payload = record.getPayload();
+        String textEncoding = ((payload[0] & 128) == 0) ? "UTF-8" : "UTF-16";
+        int languageCodeLength = payload[0] & 51;
+        return new String(payload, languageCodeLength + 1, payload.length - languageCodeLength - 1, textEncoding);
+    }
+
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
@@ -111,25 +108,34 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
 
         // Checks if the intent is the NDEF DISCOVERED intent. Only those supported will go in here
         if (intent != null && NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
-            Parcelable[] rawMessages = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
-            if (rawMessages != null) {
-                NdefMessage[] messages = new NdefMessage[rawMessages.length];
-                for (int i = 0; i < rawMessages.length; i++) {
-                    messages[i] = (NdefMessage) rawMessages[i];
-                    Log.d("NDEF", rawMessages[i].toString());
-                    Toast toast = Toast.makeText(context, "NDEF", Toast.LENGTH_SHORT);
-                    toast.show();
+
+            // Get payload from NFC Tag
+            String type = intent.getType();
+            if (type.equals(MIME_TEXT_PLAIN)) {
+                Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+                Ndef ndef = Ndef.get(tag);
+                NdefMessage message = ndef.getCachedNdefMessage();
+                NdefRecord[] records = message.getRecords();
+                for (NdefRecord record : records) {
+                    if (record.getTnf() == NdefRecord.TNF_WELL_KNOWN && Arrays.equals(record.getType(), NdefRecord.RTD_TEXT)) {
+                        try {
+                            String cardName = readText(record);
+                            Log.d("NDEF", cardName);
+                            cardDatabase.getCardDetails(cardName);
+
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
+            }
+            else {
+                Toast.makeText(context, INCORRECT_TAG_MSG, Toast.LENGTH_SHORT).show();
             }
         }
         // Handles all Non-supported NFC cards such as MIFARE classic which is what I'm testing with
         else if(intent != null && NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())) {
-            Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-            String str = bytesToHex(tag.getId());
-            Log.d("TAG", str);
-
-            // Perform action when card read
-            cardDatabase.getCardDetails("Junk Synchron");
+            Toast.makeText(context, INCORRECT_TAG, Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -76,7 +76,14 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
                 String name = (String) fieldSpell.get(GameState.NAME);
                 long pos = (Long) fieldSpell.get(GameState.POSITION);
 
-                if (!name.equals("")) {
+                // Remove card
+                if (name.equals("")) {
+                    field.setCard(null);
+                    field.setImageResource(R.mipmap.ic_launcher);
+                }
+
+                // Place card
+                else {
                     field.setCard(new Card(name, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         field.setImageResource(R.mipmap.spell);
@@ -100,7 +107,14 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
                 String name = (String) pend.get(GameState.NAME);
                 long pos = (Long) pend.get(GameState.POSITION);
 
-                if (!name.equals("")) {
+                // Remove card
+                if (name.equals("")) {
+                    pend_left.setCard(null);
+                    pend_left.setImageResource(R.mipmap.ic_launcher);
+                }
+
+                // Place card
+                else {
                     pend_left.setCard(new Card(name, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         pend_left.setImageResource(R.mipmap.spell);
@@ -124,7 +138,14 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
                 String name = (String) pend.get(GameState.NAME);
                 long pos = (Long) pend.get(GameState.POSITION);
 
-                if (!name.equals("")) {
+                // Remove card
+                if (name.equals("")) {
+                    pend_right.setCard(null);
+                    pend_right.setImageResource(R.mipmap.ic_launcher);
+                }
+
+                // Place card
+                else {
                     pend_right.setCard(new Card(name, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         pend_right.setImageResource(R.mipmap.spell);
@@ -261,7 +282,14 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
         String name = (String) card.get(GameState.NAME);
         long pos = (Long) card.get(GameState.POSITION);
 
-        if (!name.equals("")) {
+        // Remove card
+        if (name.equals("")) {
+            cardButton.setCard(null);
+            cardButton.setImageResource(R.mipmap.ic_launcher);
+        }
+
+        // Place card
+        else {
             cardButton.setCard(new Card(name, pos));
             if (pos == Constants.FACE_UP_POSITION) {
                 cardButton.setImageResource(R.mipmap.monster);
@@ -279,7 +307,14 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
         String name = (String) card.get(GameState.NAME);
         long pos = (Long) card.get(GameState.POSITION);
 
-        if (!name.equals("")) {
+        // Remove card
+        if (name.equals("")) {
+            cardButton.setCard(null);
+            cardButton.setImageResource(R.mipmap.ic_launcher);
+        }
+
+        // Place card
+        else {
             cardButton.setCard(new Card(name, pos));
             if (pos == Constants.FACE_UP_POSITION) {
                 cardButton.setImageResource(R.mipmap.spell);
