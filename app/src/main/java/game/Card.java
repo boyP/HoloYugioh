@@ -45,10 +45,10 @@ public class Card implements Parcelable {
         this.position = position;
     }
 
-    public Card(String cardName, long position) {
+    public Card(String cardName, String cardType, long position) {
         this.name = cardName;
         this.description = "";
-        this.cardType = "";
+        this.cardType = cardType;
         this.type = "";
         this.family = "";
         this.atk = 0;

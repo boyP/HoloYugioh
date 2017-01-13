@@ -22,6 +22,7 @@ import java.util.Arrays;
 import Constants.Constants;
 import api.CardDatabase;
 import api.OnDataReadyListener;
+import firebase.GameState;
 import game.Card;
 
 /**
@@ -161,6 +162,8 @@ public class NfcActivity extends AppCompatActivity implements View.OnClickListen
             Toast.makeText(this, API_ERROR_MSG, Toast.LENGTH_LONG).show();
         }
         else {
+            GameState.writePlaceCardName(card, fieldPosition);
+
             Intent placementIntent = new Intent(this, PlaceCardActivity.class);
             placementIntent.putExtra(Constants.CARD_PARCEL, card);
             placementIntent.putExtra(Constants.FIELD_POSITION, fieldPosition);

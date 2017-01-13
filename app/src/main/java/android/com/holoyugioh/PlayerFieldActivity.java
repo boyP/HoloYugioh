@@ -1,11 +1,13 @@
 package android.com.holoyugioh;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,14 +22,21 @@ import game.CardButton;
 
 public class PlayerFieldActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private static final int PLAYER = GameState.getPlayer();
+    private static int PLAYER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_field);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         initializeButtons();
+
+        PLAYER = GameState.getPlayer();
+        TextView playerName = (TextView) findViewById(R.id.card_name);
+        Log.d("PLAYER", "opp player num " + PLAYER);
+        String player = PLAYER == 1 ? "Player 1's Field" : "Player 2's Field";
+        playerName.setText(player);
     }
 
     private void initializeButtons() {
@@ -84,7 +93,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
 
                 // Place card
                 else {
-                    field.setCard(new Card(name, pos));
+                    field.setCard(new Card(name, Constants.SPELL, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         field.setImageResource(R.mipmap.spell);
                     }
@@ -115,7 +124,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
 
                 // Place card
                 else {
-                    pend_left.setCard(new Card(name, pos));
+                    pend_left.setCard(new Card(name, Constants.SPELL, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         pend_left.setImageResource(R.mipmap.spell);
                     }
@@ -146,7 +155,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
 
                 // Place card
                 else {
-                    pend_right.setCard(new Card(name, pos));
+                    pend_right.setCard(new Card(name, Constants.SPELL, pos));
                     if (pos == Constants.FACE_UP_POSITION) {
                         pend_right.setImageResource(R.mipmap.spell);
                     }
@@ -290,7 +299,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
 
         // Place card
         else {
-            cardButton.setCard(new Card(name, pos));
+            cardButton.setCard(new Card(name, Constants.MONSTER, pos));
             if (pos == Constants.FACE_UP_POSITION) {
                 cardButton.setImageResource(R.mipmap.monster);
             }
@@ -315,7 +324,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
 
         // Place card
         else {
-            cardButton.setCard(new Card(name, pos));
+            cardButton.setCard(new Card(name, Constants.SPELL, pos));
             if (pos == Constants.FACE_UP_POSITION) {
                 cardButton.setImageResource(R.mipmap.spell);
             }

@@ -7,7 +7,7 @@
     tools:context="android.com.holoyugioh.PlayerFieldActivity">
 
     <include
-        layout="@layout/lifepoint_header"
+        layout="@layout/card_view_header"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/header"/>

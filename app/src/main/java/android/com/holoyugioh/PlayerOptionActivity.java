@@ -28,6 +28,9 @@ public class PlayerOptionActivity extends AppCompatActivity implements View.OnCl
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         
         initializeButtons();
+        TextView textView = (TextView) findViewById(R.id.player_name);
+        String playerName = "Player " + GameState.getPlayer();
+//        textView.setText(playerName);
     }
 
     private void initializeButtons() {
@@ -100,6 +103,11 @@ public class PlayerOptionActivity extends AppCompatActivity implements View.OnCl
 
             case R.id.yourLPLabel:
                 intent = new Intent(this, LifePointsCalculatorActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.menu:
+                intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
 

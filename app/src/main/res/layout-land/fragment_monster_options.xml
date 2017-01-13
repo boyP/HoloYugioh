@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="android.com.holoyugioh.MonsterOptions">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_below="@+id/position_options"
+    android:id="@+id/destroy_options">
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:srcCompat="@mipmap/spell"
+    android:layout_marginLeft="@dimen/optiom_margin"
+    android:layout_marginRight="@dimen/optiom_margin"
+    android:text="@string/destroy"
+    android:id="@+id/destroy"
+    android:contentDescription="@string/destroy" />
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:srcCompat="@mipmap/monster"
+    android:layout_marginLeft="@dimen/optiom_margin"
+    android:layout_marginRight="@dimen/optiom_margin"
+    android:text="@string/remove_play"
+    android:id="@+id/remove_play"
+    android:contentDescription="@string/remove_play" />
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:id="@+id/position_options">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/spell"
+        android:layout_marginLeft="@dimen/optiom_margin"
+        android:layout_marginRight="@dimen/optiom_margin"
+        android:text="@string/face_up_ATK"
+        android:id="@+id/face_up"
+        android:contentDescription="@string/face_up_ATK" />
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:srcCompat="@mipmap/monster"
+    android:layout_marginLeft="@dimen/optiom_margin"
+    android:layout_marginRight="@dimen/optiom_margin"
+    android:text="@string/face_up_DEF"
+    android:id="@+id/face_up_def"
+    android:contentDescription="@string/face_up_DEF" />
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:srcCompat="@mipmap/monster"
+    android:layout_marginLeft="@dimen/optiom_margin"
+    android:layout_marginRight="@dimen/optiom_margin"
+    android:text="@string/set"
+    android:id="@+id/face_down"
+    android:contentDescription="@string/set" />
+
+    </LinearLayout>
+
+</RelativeLayout>

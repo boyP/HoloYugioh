@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_card_options"
     android:layout_width="match_parent"
@@ -26,66 +25,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/card_name" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/spell"
-            android:layout_marginLeft="@dimen/optiom_margin"
-            android:layout_marginRight="@dimen/optiom_margin"
-            android:id="@+id/destroy" />
-
-        <TextView
-            android:text="@string/destroy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/destroy"
-            android:layout_alignLeft="@+id/destroy"
-            android:layout_alignRight="@+id/destroy"
-            android:id="@+id/destroy_label" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/monster"
-            android:layout_toRightOf="@+id/destroy"
-            android:layout_marginLeft="@dimen/optiom_margin"
-            android:layout_marginRight="@dimen/optiom_margin"
-            android:id="@+id/change_pos" />
-
-        <TextView
-            android:text="@string/change_pos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/change_pos"
-            android:layout_alignLeft="@+id/change_pos"
-            android:layout_alignRight="@+id/change_pos"
-            android:id="@+id/change_pos_label" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/monster"
-            android:layout_toRightOf="@+id/change_pos"
-            android:layout_marginLeft="@dimen/optiom_margin"
-            android:layout_marginRight="@dimen/optiom_margin"
-            android:id="@+id/remove_play" />
-
-        <TextView
-            android:text="@string/remove_play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/remove_play"
-            android:layout_alignLeft="@+id/remove_play"
-            android:layout_alignRight="@+id/remove_play"
-            android:id="@+id/remove_play_label" />
-
-    </RelativeLayout>
 
     <Button
         android:text="@string/view_details"

@@ -215,6 +215,11 @@ public class GameState {
         path.child(POSITION).setValue(positionToChange);
     }
 
+    public static void writePlaceCardName(Card card, int fieldPosition) {
+        DatabaseReference path = getFirebasePathFromCardPosition(fieldPosition);
+        path.child(NAME).setValue(card.getName());
+    }
+
     /**
      * Removes the card from the firebase database at the fieldPosition
      * @param card : Card to be changed

@@ -36,7 +36,9 @@
 
     <!-- CARD OPTIONS -->
     <string name="destroy">Destroy</string>
-    <string name="change_pos">Change Position</string>
+    <string name="face_up_ATK">Face-Up ATK</string>
+    <string name="face_up_DEF">Face-Up DEF</string>
+    <string name="set">Set</string>
     <string name="remove_play">Remove from Play</string>
     <string name="view_details">View Details</string>
 
