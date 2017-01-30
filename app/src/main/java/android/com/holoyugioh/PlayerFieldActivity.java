@@ -32,7 +32,7 @@ public class PlayerFieldActivity extends AppCompatActivity implements View.OnCli
 
         initializeButtons();
 
-        PLAYER = GameState.getPlayer();
+        PLAYER = GameState.getPlayerNum();
         TextView playerName = (TextView) findViewById(R.id.card_name);
         Log.d("PLAYER", "opp player num " + PLAYER);
         String player = PLAYER == 1 ? "Player 1's Field" : "Player 2's Field";

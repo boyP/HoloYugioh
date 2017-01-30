@@ -1,5 +1,7 @@
 package firebase;
 
+import android.util.Log;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -10,12 +12,11 @@ public class GameState {
 
     private static DatabaseReference mDatabase;
 
-    private static final String TOP_REFERENCE = "Game";
     private static final String PLAYERS = "Players";
-    private static final String PLAYER_1 = "Player1";
-    private static final String PLAYER_2 = "Player2";
 
-    private static String CURRENT_PLAYER = "Player1";
+    private static String PLAYER = "Player1";
+    private static String OPPONENT = "Player2";
+    private static String CURRENT_PLAYER = PLAYER;
     private static int CURRENT_PLAYER_NUM = 1;
 
     private static final String LIFE_POINTS = "Life Points";
@@ -38,12 +39,26 @@ public class GameState {
 
     /**
      * Initializes firebase for a new game
+     *
+     * NOTE: This method can only be called after setPlayer and setOpponent are called
      */
     public static void initializePlayer(int playerNum) {
-        mDatabase = FirebaseDatabase.getInstance().getReference(TOP_REFERENCE);
+
+        String gameName;
+        if (PLAYER.compareTo(OPPONENT) > 0) {
+            gameName = PLAYER + "VS" + OPPONENT;
+        }
+        else if (PLAYER.compareTo(OPPONENT) == 0) {
+            Log.e("GameState", "ERROR, TWO PLAYERS HAVE SAME NAME");
+            gameName = "Game";
+        }
+        else {
+            gameName = OPPONENT + "VS" + PLAYER;
+        }
+        mDatabase = FirebaseDatabase.getInstance().getReference(gameName);
 
         CURRENT_PLAYER_NUM = playerNum;
-        CURRENT_PLAYER = playerNum == 1 ? PLAYER_1 : PLAYER_2;
+        CURRENT_PLAYER = playerNum == 1 ? PLAYER : OPPONENT;
 
         DatabaseReference player = mDatabase.child(PLAYERS).child(CURRENT_PLAYER);
 
@@ -98,20 +113,51 @@ public class GameState {
         spell.child(CARD5).child(POSITION).setValue(0);
     }
 
-    public static int getPlayer() {
+    /******************
+     * PLAYER INFO
+     ******************/
+
+    /**
+     * Sets the player's name after log in
+     * @param playerName : The player's display name
+     */
+    public static void setPlayer(String playerName) {
+        PLAYER = playerName;
+    }
+
+    public static String getPlayerName() {
+        return PLAYER;
+    }
+
+    /**
+     * Sets the opponent's name after player is matched with opponent
+     * @param opponentName : The opponent's display name
+     */
+    public static void setOpponent(String opponentName) {
+        OPPONENT = opponentName;
+    }
+
+    public static String getOpponentName() {
+        return OPPONENT;
+    }
+
+    public static int getPlayerNum() {
         return CURRENT_PLAYER_NUM;
     }
 
-    public static int getOpponentPlayer() {
+    public static int getOpponentPlayerNum() {
         return CURRENT_PLAYER_NUM == 1 ? 2 : 1;
     }
 
+
+
+
     public static DatabaseReference getLifePointsPath(int player) {
         if (player == 1) {
-            return mDatabase.child(PLAYERS).child(PLAYER_1).child(LIFE_POINTS);
+            return mDatabase.child(PLAYERS).child(PLAYER).child(LIFE_POINTS);
         }
         else {
-            return mDatabase.child(PLAYERS).child(PLAYER_2).child(LIFE_POINTS);
+            return mDatabase.child(PLAYERS).child(OPPONENT).child(LIFE_POINTS);
         }
     }
 
@@ -122,10 +168,10 @@ public class GameState {
      */
     public static DatabaseReference getMonsterCardPath(int player) {
         if (player == 1) {
-            return mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD).child(MONSTER);
+            return mDatabase.child(PLAYERS).child(PLAYER).child(FIELD).child(MONSTER);
         }
         else {
-            return mDatabase.child(PLAYERS).child(PLAYER_2).child(FIELD).child(MONSTER);
+            return mDatabase.child(PLAYERS).child(OPPONENT).child(FIELD).child(MONSTER);
         }
     }
 
@@ -136,10 +182,10 @@ public class GameState {
      */
     public static DatabaseReference getSpellCardPath(int player) {
         if (player == 1) {
-            return mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD).child(SPELL_TRAP);
+            return mDatabase.child(PLAYERS).child(PLAYER).child(FIELD).child(SPELL_TRAP);
         }
         else {
-            return mDatabase.child(PLAYERS).child(PLAYER_2).child(FIELD).child(SPELL_TRAP);
+            return mDatabase.child(PLAYERS).child(OPPONENT).child(FIELD).child(SPELL_TRAP);
         }
     }
 
@@ -158,10 +204,10 @@ public class GameState {
      */
     public static DatabaseReference getPendulumLeftPath(int player) {
         if (player == 1) {
-            return mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD).child(PENDULUM_LEFT);
+            return mDatabase.child(PLAYERS).child(PLAYER).child(FIELD).child(PENDULUM_LEFT);
         }
         else {
-            return mDatabase.child(PLAYERS).child(PLAYER_2).child(FIELD).child(PENDULUM_LEFT);
+            return mDatabase.child(PLAYERS).child(OPPONENT).child(FIELD).child(PENDULUM_LEFT);
         }
     }
 
@@ -172,10 +218,10 @@ public class GameState {
      */
     public static DatabaseReference getPendulumRightPath(int player) {
         if (player == 1) {
-            return mDatabase.child(PLAYERS).child(PLAYER_1).child(FIELD).child(PENDULUM_RIGHT);
+            return mDatabase.child(PLAYERS).child(PLAYER).child(FIELD).child(PENDULUM_RIGHT);
         }
         else {
-            return mDatabase.child(PLAYERS).child(PLAYER_2).child(FIELD).child(PENDULUM_RIGHT);
+            return mDatabase.child(PLAYERS).child(OPPONENT).child(FIELD).child(PENDULUM_RIGHT);
         }
     }
 
@@ -185,10 +231,10 @@ public class GameState {
      */
     public static void writeLifePoints(int newLifePoints, int player) {
         if (player == 1) {
-            mDatabase.child(PLAYERS).child(PLAYER_1).child(LIFE_POINTS).setValue(newLifePoints);
+            mDatabase.child(PLAYERS).child(PLAYER).child(LIFE_POINTS).setValue(newLifePoints);
         }
         else {
-            mDatabase.child(PLAYERS).child(PLAYER_2).child(LIFE_POINTS).setValue(newLifePoints);
+            mDatabase.child(PLAYERS).child(OPPONENT).child(LIFE_POINTS).setValue(newLifePoints);
         }
     }
 
