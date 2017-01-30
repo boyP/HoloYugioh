@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import firebase.GameState;
@@ -28,15 +29,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "NFC is not available on this device", Toast.LENGTH_SHORT).show();
         }
 
+        // Views
+        TextView mStatusTextView = (TextView) findViewById(R.id.status);
+        mStatusTextView.setText(getString(R.string.signed_in_fmt, GameState.getPlayerName()));
+
         initializeButtons();
     }
 
     private void initializeButtons() {
         Button startP1 = (Button) findViewById(R.id.start_player1);
-        Button startP2 = (Button) findViewById(R.id.start_player2);
-
         startP1.setOnClickListener(this);
-        startP2.setOnClickListener(this);
     }
 
     /**
@@ -56,11 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.start_player1:
-                initializeGame(1);
-                break;
-
-            case R.id.start_player2:
                 initializeGame(2);
+                initializeGame(1);
                 break;
 
             default:

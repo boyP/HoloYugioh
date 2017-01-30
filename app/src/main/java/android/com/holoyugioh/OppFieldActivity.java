@@ -34,7 +34,7 @@ public class OppFieldActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_opp_field);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        OPP_PLAYER = GameState.getOpponentPlayer();
+        OPP_PLAYER = GameState.getOpponentPlayerNum();
 
         initializeButtons();
         TextView playerName = (TextView) findViewById(R.id.card_name);

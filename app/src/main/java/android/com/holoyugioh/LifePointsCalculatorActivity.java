@@ -37,7 +37,7 @@ public class LifePointsCalculatorActivity extends AppCompatActivity implements V
         editText = (EditText) findViewById(R.id.output);
         editText.setText("");
 
-        GameState.getLifePointsPath(GameState.getPlayer()).addValueEventListener(new ValueEventListener() {
+        GameState.getLifePointsPath(GameState.getPlayerNum()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 long val = (Long) dataSnapshot.getValue();
@@ -52,7 +52,7 @@ public class LifePointsCalculatorActivity extends AppCompatActivity implements V
             }
         });
 
-        GameState.getLifePointsPath(GameState.getOpponentPlayer()).addValueEventListener(new ValueEventListener() {
+        GameState.getLifePointsPath(GameState.getOpponentPlayerNum()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 long val = (Long) dataSnapshot.getValue();
@@ -145,16 +145,16 @@ public class LifePointsCalculatorActivity extends AppCompatActivity implements V
 
             // Write to Life Points buttons
             case R.id.plus_p1:
-                addLifePoints(yourLP, GameState.getPlayer());
+                addLifePoints(yourLP, GameState.getPlayerNum());
                 break;
             case R.id.minus_p1:
-                subtractLifePoints(yourLP, GameState.getPlayer());
+                subtractLifePoints(yourLP, GameState.getPlayerNum());
                 break;
             case R.id.plus_p2:
-                addLifePoints(oppLP, GameState.getOpponentPlayer());
+                addLifePoints(oppLP, GameState.getOpponentPlayerNum());
                 break;
             case R.id.minus_p2:
-                subtractLifePoints(oppLP, GameState.getOpponentPlayer());
+                subtractLifePoints(oppLP, GameState.getOpponentPlayerNum());
                 break;
 
             // Calculator Buttons

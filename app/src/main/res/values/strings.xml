@@ -2,6 +2,15 @@
     <string name="app_name">HoloYugioh</string>
     <string name="action_settings">Settings</string>
 
+    <!-- SIGN IN STRINGS-->
+    <string name="signed_in_fmt">Signed in as: %s</string>
+    <string name="signed_in">Signed in</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="signed_out">Signed out</string>
+    <string name="loading">Loading…</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="disconnect">Disconnect</string>
+
     <string name="title_activity_splash">SplashActivity</string>
     <string name="start_p1">Duel as Player 1</string>
     <string name="start_p2">Duel as Player 2</string>
@@ -123,4 +132,7 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+
+    <string name="app_id">844665268262</string>
+
 </resources>

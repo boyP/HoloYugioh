@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-feature
         android:name="android.hardware.nfc"
@@ -35,7 +36,14 @@
         <activity android:name=".PlaceCardActivity" />
         <activity android:name=".CardDetailsActivity" />
         <activity android:name=".CardOptionsActivity" />
-        <activity android:name=".LifePointsCalculatorActivity"></activity>
+        <activity android:name=".LifePointsCalculatorActivity" />
+        <activity android:name=".LoginActivity" />
+
+        <meta-data android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/app_id" />
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
     </application>
 
 </manifest>
